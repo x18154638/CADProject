@@ -12,15 +12,18 @@
 
 ActiveRecord::Schema.define(version: 2018_11_22_165528) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "activities", force: :cascade do |t|
     t.string "trackable_type"
-    t.integer "trackable_id"
+    t.bigint "trackable_id"
     t.string "owner_type"
-    t.integer "owner_id"
+    t.bigint "owner_id"
     t.string "key"
     t.text "parameters"
     t.string "recipient_type"
-    t.integer "recipient_id"
+    t.bigint "recipient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type"
@@ -32,6 +35,15 @@ ActiveRecord::Schema.define(version: 2018_11_22_165528) do
   end
 
   create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "team_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", null: false
