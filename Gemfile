@@ -35,12 +35,40 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+## for jQuery for the text area for makign sessions -- wysiswig
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+
+## see above
+gem "wysiwyg-rails"
+
+## style framework I am using
+gem 'bulma-rails', '~> 0.6.1' 
+
+## using this for my forms
+gem 'simple_form'
+
+## can use this to show a players image if they have one
+gem 'gravatar_image_tag', '1.2'
+
+## for user authentication and logging in and out views and adding and removing users
+gem 'devise', '~> 4.4'
+
+## for the logged in users actity log on the left hand side
+gem 'public_activity'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'isValueGreaterThanZero'
+
 group :development, :test do
+  
+  ## for testing 
+  gem 'capybara', '~> 2.15'
+  gem 'selenium-webdriver'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
 end
 
 group :development do
@@ -50,11 +78,14 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  ## for some better errors and nice to haves
+  gem 'better_errors', '~> 2.4'
+  gem 'guard', '~> 2.14', '>= 2.14.1'
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
 end
 
 group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
