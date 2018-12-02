@@ -299,7 +299,7 @@ DEPENDENCIES
   pg
   public_activity
   puma (~> 3.11)
-  rails (~> 5.2.1)
+  rails
   sass-rails (~> 5.0)
   selenium-webdriver
   simple_form
@@ -316,4 +316,4 @@ RUBY VERSION
    ruby 2.4.0p0
 
 BUNDLED WITH
-   1.17.1
+   2.0.0.pre.2
