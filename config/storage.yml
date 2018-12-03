@@ -11,7 +11,7 @@ amazon:
   service: S3
   access_key_id: <%= ENV['AKIAI5MQCBZ7G4QXW5JA'] %>
   secret_access_key: <%= ENV['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'] %>
-  region: <%= ENV['eu-west-2'] %>
+  region: eu-west-2
   bucket: <%= ENV['cadprojectizaak'] %>
 
 # Remember not to checkin your GCS keyfile to a repository
