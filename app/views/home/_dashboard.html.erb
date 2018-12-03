@@ -1,6 +1,34 @@
 <section class="section pt3">
-	<p class="title is-5 border-bottom pb3 has-text-centered">Welcome <%= current_user.name %> 👋🏻</p>
+	<p class="title is-5 border-bottom pb3 has-text-centered">Hello <%= current_user.name %></p>
 	<div class="columns">
+		
+		<%## here I  want to get out team count and then loop through team names and link to them%>
+		<div class="column border-right ph4">
+			<div class="level">
+				<div class="level-left">
+					<h3 class="subtitle is-5">My Teams <span class="tag is-rounded"><%= @teams.count %></span></h3>
+				</div>
+				<div class="level-right">
+					<p class="field">
+						<%= link_to new_team_path, class: 'button is-small' do %>
+							<span class="icon is-small has-text-link"><i class="fa fa-plus"></i></span>
+						<% end %>
+					</p>
+				</div>
+			</div>
+			<hr />
+			<% @teams.each do |team| %>
+				<div class="content border-bottom pb4">
+					<p class="title is-4">
+						<%= link_to team.name, team %>
+					</p>
+					<p class="subtitle is-6"><%= team.users.count %> Players</p>
+					<%## way to join names that are commna seperated, dont want a trailaing comma, so using a method safe join. takes the team users and maps through them - inbetween brackets is another loop using the user and comma seperate and close off %>
+					<span class="f6"><%= safe_join(team.users.map { |user| user.name }, ', ') %></span>
+				</div>
+			<% end %>
+
+		</div>
 
 		<div class="column border-right ph4">
 			<div class="level">
@@ -32,33 +60,7 @@
 			<% end %>
 		
 		</div>
-		<%## here I  want to get out team count and then loop through team names and link to them%>
-		<div class="column border-right ph4">
-			<div class="level">
-				<div class="level-left">
-					<h3 class="subtitle is-5">My Teams <span class="tag is-rounded"><%= @teams.count %></span></h3>
-				</div>
-				<div class="level-right">
-					<p class="field">
-						<%= link_to new_team_path, class: 'button is-small' do %>
-							<span class="icon is-small has-text-link"><i class="fa fa-plus"></i></span>
-						<% end %>
-					</p>
-				</div>
-			</div>
-			<hr />
-			<% @teams.each do |team| %>
-				<div class="content border-bottom pb4">
-					<p class="title is-4">
-						<%= link_to team.name, team %>
-					</p>
-					<p class="subtitle is-6"><%= team.users.count %> Players</p>
-					<%## way to join names that are commna seperated, dont want a trailaing comma, so using a method safe join. takes the team users and maps through them - inbetween brackets is another loop using the user and comma seperate and close off %>
-					<span class="f6"><%= safe_join(team.users.map { |user| user.name }, ', ') %></span>
-				</div>
-			<% end %>
-
-		</div>
+		
 
 		<div class="column ph4">
 			<h3 class="subtitle is-5">Activity</h3>

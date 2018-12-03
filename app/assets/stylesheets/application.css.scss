@@ -167,7 +167,7 @@
   padding-right: var(--spacing-extra-extra-extra-large);
 }
 /* Color */
-.bg-gray { background-color: #f8f8f8; }
+.bg-gray { background-color: #FFDAB9; }
 
 /* Font Size */
 .f1 { font-size: 3rem; }
@@ -185,11 +185,12 @@
 .fw7 { font-weight: 600; }
 
 /* Border */
-.border-light { border: 1px solid #dddddd; }
-.border { border: 1px solid #dedede; }
-.border-bottom { border-bottom: 1px solid #dddddd; }
-.border-top { border-top: 1px solid #dddddd; }
-.border-right { border-right: 1px solid #dddddd; }
+.border-light { border: 1px solid #ffd700; }
+.border { border: 1px solid #ffd700; }
+.border-bottom { border-bottom: 1px solid #ffd700; }
+.border-top { border-top: 1px solid #ffd700; }
+.border-right { border-right: 1px solid #ffd700; }
+.border-left { border-right: 1px solid #ffd700; }
 
 .border-radius-3 { border-radius: 3px; }
 
@@ -200,6 +201,141 @@
 .notification:not(:last-child) {
 	margin-bottom: 0;
 }
+
+/* Overriding Bulma  */
+.navbar.is-link {
+  background-color: #007f00;
+  color: #fff;
+}
+
+.title {
+    color: #ffd700;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.125;
+}
+
+body {
+    background-color: #007f00;
+    color: #ffd700;
+}
+
+.label {
+    color: #ffd700;
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+a {
+    color: #ffd700;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:active {
+    color: #ffd700;
+}
+
+a:hover {
+    color: #ffd700;
+}
+
+h3 {
+    color: #ffd700;
+}
+
+.navbar.is-link .navbar-brand .navbar-item a:hover {
+  color: #007f00;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    color: #ffd700;
+    font-weight: 400;
+    line-height: 1.125;
+}
+
+
+.navbar.is-link {
+    background-color: #007f00;
+    color: #fff;
+}
+
+.navbar.is-link .navbar-item.has-dropdown:hover .navbar-link, .navbar.is-link .navbar-item.has-dropdown.is-active .navbar-link {
+    background-color: #007f00;
+    color: #fff;
+}
+
+.navbar-item:hover {
+    background-color: #007f00;
+    color: #fff;
+}
+
+.navbar.is-link .navbar-brand > a.navbar-item:hover, .navbar.is-link .navbar-brand > a.navbar-item.is-active, .navbar.is-link .navbar-brand .navbar-link:hover, .navbar.is-link .navbar-brand .navbar-link.is-active {
+    background-color: #007f00;
+    color: #fff;
+}
+
+html {
+  background-color: #007f00;
+}
+
+.navbar.is-link .navbar-brand .navbar-item a {
+  color: #007f00;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navbar.is-link .navbar-brand .navbar-item {
+  color: #007f00;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button.is-link {
+    background-color: #20bc56;
+    border-color: transparent;
+    color: #fff;
+}
+
+.button.is-link a:hover {
+    background-color: #20bc56;
+    border-color: transparent;
+    color: #fff;
+}
+
+hr {
+    background-color: #ffd700;
+    border: none;
+    display: block;
+    height: 1px;
+    margin: 1.5rem 0;
+}
+
+.subtitle {
+    color: #ffd700;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.button.is-link:active, .button.is-link.is-active {
+    background-color: #007f00;
+    border-color: transparent;
+    color: #fff;
+}
+.button.is-link:hover, .button.is-link.is-hovered {
+    background-color: #007f00;
+    border-color: transparent;
+    color: #fff;
+}
+
+.section {
+    padding: 5rem 1.5rem;
+}
+
 
 @import "teams";
 @import "events";
