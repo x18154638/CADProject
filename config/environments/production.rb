@@ -99,5 +99,5 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = { :address => "https://cadteammanagement.herokuapp.com", :port => 1025 }
   ## for devise
-  config.action_mailer.default_url_options = { host: 'https://cadteammanagement.herokuapp.com'}
+  config.action_mailer.default_url_options = { host: 'cadteammanagement.herokuapp.com' }
 end
