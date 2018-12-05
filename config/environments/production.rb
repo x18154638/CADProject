@@ -94,4 +94,10 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+    ## for the mail catcher 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => "https://cadteammanagement.herokuapp.com", :port => 1025 }
+  ## for devise
+  config.action_mailer.default_url_options = { host: 'https://cadteammanagement.herokuapp.com'}
 end
