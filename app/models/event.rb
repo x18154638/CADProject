@@ -8,4 +8,8 @@ class Event < ApplicationRecord
     
     include PublicActivity::Model
     tracked owner: Proc.new { |controller, model| controller.current_user}
+    
+    ##for photos added to events - use s3
+    has_one_attached :event_picture
+    event_picture.attach(params[:event_picture])
 end
