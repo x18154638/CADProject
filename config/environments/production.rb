@@ -95,9 +95,20 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
-    ## for the mail catcher 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { :address => "https://cadteammanagement.herokuapp.com", :port => 1025 }
+  ## for the mail catcher 
+  
   ## for devise
-  config.action_mailer.default_url_options = { host: 'cadteammanagement.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'cadteammanagement.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :user_name => ENV["SENDGRID_USERNAME"],
+    :password => ENV["SENDGRID_PASSWORD"],
+    :domain => 'cadteammanagement.herokuapp.com/',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+
+
 end
