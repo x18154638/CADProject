@@ -1,3 +1,5 @@
+##logger for logging when new events are creat and writes to log file - uses the singleton design pattern 
+require 'my_logger'
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
@@ -7,6 +9,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.all.order("created_at DESC")
   end
+  
 
   # GET /events/1
   # GET /events/1.json
@@ -34,6 +37,11 @@ class EventsController < ApplicationController
   def create
     
     @event = current_user.events.build(event_params)
+    logger = MyLogger.instance
+    logger.logInformation("An event was created")
+    
+   
+    # logger.logInformation(Time.now.strftime('%m/%d/%y %h:%m %p') + @event.name + "An event was created")
 
     respond_to do |format|
       if @event.save
@@ -81,4 +89,5 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:name, :description, :team_id)
     end
+    
 end

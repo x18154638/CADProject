@@ -68,6 +68,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'isValueGreaterThanZero'
 
+# for installing the secutiry monitoring
+gem 'sqreen'
+
 group :development, :test do
   
   ## for testing 
